@@ -1,1 +1,1 @@
-# Data-Mining-Project
+The goal of the project was to clean up the dataset and then see which file types occured the most with the secure and insecure flag types. We achieved this by using python to write a tf-idf function and output the top 1000 results.
