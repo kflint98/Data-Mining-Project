@@ -8,8 +8,8 @@ from time import sleep
 keylist = list()
 valuelist = list()
 
-neutral_df = pd.read_csv('C:/Users/krisf/OneDrive/Documents/Coding/4220/Term Project/neutral_dataset.csv')
-insecure_df = pd.read_csv('C:/Users/krisf/OneDrive/Documents/Coding/4220/Term Project/insecure_dataset.csv')
+neutral_df = pd.read_csv('neutral_dataset.csv')
+insecure_df = pd.read_csv('insecure_dataset.csv')
 
 vectorizer = TfidfVectorizer()
 X = vectorizer.fit_transform(neutral_df['MODIFIED_FILE'])
@@ -34,7 +34,6 @@ for doc in range(numcols):
             if s != 0.0:
                 keylist.append(w)
                 d.update({w: s})
-                #print(w, s)
     doc += 1
     bar.update(doc)
 bar.finish()
@@ -44,31 +43,3 @@ sorted = sorted[:1000]
 
 print(len(sorted))
 print(sorted)
-
-
-
-#var.to_txt('C:/Users/krisf/OneDrive/Documents/Coding/4220/Term Project/vector.txt')
-
-
-#df = pd.DataFrame(X.toarray(), columns = vectorizer.get_feature_names())
-
-#print(df)
-
-
-#print(X.shape)
-#print(X)
-
-#print(X.head())
-#print(neutral_df.head())
-
-
-
-
-#vectorizer.fit(neutral_df['MODIFIED_FILE'])
-#print(vectorizer.vocabulary_)
-#print(vectorizer.idf_)
-
-#vector = vectorizer.transform([neutral_df['MODIFIED_FILE']])
-
-#print(vector.shape)
-#print(vector.toarray())
